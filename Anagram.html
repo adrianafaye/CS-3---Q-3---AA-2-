@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <head>
-<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-<title> Anagram Checker </title>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title> Anagram Checker </title>
 </head>
 <body>
 
 <script>
-function isAnagram(input1, input2) {
-    const cleanInput1 = input1.replace(/[^\w]/g, '').toLowerCase();
-    const cleanInput2 = input2.replace(/[^\w]/g, '').toLowerCase();
+    function isAnagram(input1, input2) {
+        const cleanInput1 = input1.replace(/[^\w]/g, '').toLowerCase();
+        const cleanInput2 = input2.replace(/[^\w]/g, '').toLowerCase();
 
-    const sortedInput1 = cleanInput1.split('').sort().join('');
-    const sortedInput2 = cleanInput2.split('').sort().join('');
+        const sortedInput1 = cleanInput1.split('').sort().join('');
+        const sortedInput2 = cleanInput2.split('').sort().join('');
 
-    return sortedInput1 === sortedInput2;
-}
-  
-function checkAnagram() {
-    const input1 = prompt("Enter the first word/phrase:");
-    const input2 = prompt("Enter the second word/phrase:");
-
-    if (input1 && input2) {
-        const result = isAnagram(input1, input2);
-        
-        if (result) {
-            alert(`${input1} and ${input2} are anagrams!`);
-        } else {
-            alert(`${input1} and ${input2} are not anagrams.`);
-        }
-    } 
-    
-    else {
-        alert("Please provide both inputs.");
+        return sortedInput1 === sortedInput2;
     }
-}
+  
+    function checkAnagram() {
+        const input1 = prompt("Enter the first word/phrase:");
+        const input2 = prompt("Enter the second word/phrase:");
 
-checkAnagram();
+        if (input1 && input2) {
+            const result = isAnagram(input1, input2);
+            
+            if (result) {
+                alert(`${input1} and ${input2} are anagrams!`);
+            } else {
+                alert(`${input1} and ${input2} are not anagrams.`);
+            }
+        } else {
+            alert("Please provide both inputs.");
+        }
+    }
+
+    checkAnagram();
+    
 </script>
 </body>
 </html>
